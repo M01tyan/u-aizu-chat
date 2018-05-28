@@ -84,7 +84,16 @@
   </script>
 </head>
 <body>
-  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+  <ons-navigator id="navigator" page="page1.html">
+    <ons-page>
+
+      <ons-tabbar position="auto">
+        <ons-tab page="page1.html" active icon="ion-home" label="Home"></ons-tab>
+        <ons-tab icon="ion-card" label="page2" badge="3" page="page2.html"></ons-tab>
+        <ons-tab icon="ion-ios-cog" label="page3" page="page3.html"></ons-tab>
+      </ons-tabbar>
+    </ons-page>
+  </ons-navigator>
 
   <ons-template id="page1.html">
     <ons-page id="first-page">
@@ -105,6 +114,25 @@
   </ons-template>
 
   <ons-template id="page2.html">
+    <ons-page id="second-page">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>入室</ons-back-button></div>
+      <div class="center">チャット</div>
+    </ons-toolbar>
+ 
+    <div class="content">
+      <ons-list id="chats">
+      </ons-list>
+    </div>
+ 
+    <div class="send-area">
+      <ons-input id="message" placeholder="メッセージ"></ons-input>
+      <ons-button id="send" modifier="quiet">送信</ons-button>
+    </div>
+  </ons-page>
+  </ons-template>
+
+  <ons-template id="page3.html">
     <ons-page id="second-page">
     <ons-toolbar>
       <div class="left"><ons-back-button>入室</ons-back-button></div>
