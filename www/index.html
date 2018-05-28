@@ -84,7 +84,7 @@
   </script>
 </head>
 <body>
-  <ons-navigator id="navigator" page="page1.html">
+  <ons-navigator id="navigator" page="page2.html">
     <ons-page>
 
       <ons-tabbar position="auto">
@@ -116,8 +116,12 @@
   <ons-template id="page2.html">
     <ons-page id="second-page">
     <ons-toolbar>
-      <div class="left"><ons-back-button>入室</ons-back-button></div>
       <div class="center">チャット</div>
+      <div id="toolbar-right" class="right">
+          <ons-toolbar-button>
+            <ons-icon id="toolbar-icon" icon="ion-compose, material:"></ons-icon>
+          </ons-toolbar-button>
+        </div>
     </ons-toolbar>
  
     <div class="content">
@@ -133,22 +137,106 @@
   </ons-template>
 
   <ons-template id="page3.html">
-    <ons-page id="second-page">
-    <ons-toolbar>
-      <div class="left"><ons-back-button>入室</ons-back-button></div>
+    <ons-page id="home-page">
+      <ons-toolbar>
       <div class="center">チャット</div>
+      <div id="toolbar-right" class="right">
+          <ons-toolbar-button>
+            <ons-icon id="toolbar-icon" icon="ion-compose, material:"></ons-icon>
+          </ons-toolbar-button>
+        </div>
     </ons-toolbar>
- 
-    <div class="content">
-      <ons-list id="chats">
-      </ons-list>
-    </div>
- 
-    <div class="send-area">
-      <ons-input id="message" placeholder="メッセージ"></ons-input>
-      <ons-button id="send" modifier="quiet">送信</ons-button>
-    </div>
+    <ons-pull-hook>
+      <ons-icon size="30px" spin icon="md-spinner"></ons-icon>
+    </ons-pull-hook>
+
+    <ons-list>
+      <ons-list-item modifier="longdivider">
+        <div class="left">
+          <img class="list-item__thumbnail" src="http://placekitten.com/g/40/40">
+        </div>
+        <div class="center">
+          <div class="tweet-header">
+            <span class="list-item__title"><b>Cute Kitty</b></span>
+            <span class="list-item__subtitle">@cKitty&nbsp;&#8231;&nbsp;1d</span>
+          </div>
+          <span class="list-item__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+          <ons-row class="option-buttons">
+            <ons-col>
+              <ons-button modifier="quiet">
+                <ons-icon icon="ion-reply"></ons-icon><span class="reaction-no">1</span>
+              </ons-button>
+            </ons-col>
+            <ons-col>
+              <ons-button modifier="quiet">
+                <ons-icon icon="retweet"></ons-icon><span class="reaction-no">2</span>
+              </ons-button>
+            </ons-col>
+            <ons-col>
+              <ons-button modifier="quiet">
+                <ons-icon icon="ion-heart"></ons-icon><span class="reaction-no">3</span>
+              </ons-button>
+            </ons-col>
+            <ons-col>
+              <ons-button modifier="quiet">
+                <ons-icon icon="ion-email"></ons-icon>
+              </ons-button>
+            </ons-col>
+          </ons-row>
+        </div>
+      </ons-list-item>
+    </ons-list>
+
+    <style type="text/css">
+      #home-page ons-list-item .left,
+      #mentions-page ons-list-item .left {
+        display: block;
+      }
+
+      .tweet-header {
+        width: 100%;
+      }
+
+      #home-page ons-list-item .list-item__title {
+        align-self: inherit;
+        flex-basis: inherit;
+        float: left;
+        font-size: 14px;
+        margin-right: 5%;
+      }
+
+      #home-page ons-list-item .list-item__subtitle {
+        align-self: inherit;
+        flex-basis: inherit;
+        order: initial;
+      }
+
+      #home-page ons-list-item .list-item__content {
+        font-size: 14px;
+      }
+
+      #home-page ons-list-item .list-item__content img {
+        margin-top: 5%;
+      }
+
+      .option-arrow {
+        color: #657786;
+        display: flex;
+        float: right;
+      }
+
+      .option-buttons ons-button {
+        color: #657786;
+        font-size: 18px;
+      }
+
+      .reaction-no {
+        font-size: 12px;
+        margin-left: 3px;
+      }
+    </style>
   </ons-page>
   </ons-template>
+
 </body>
 </html>
